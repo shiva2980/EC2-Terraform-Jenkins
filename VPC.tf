@@ -14,14 +14,7 @@ resource "aws_subnet" "demosubnet-1" {
     Name = "Subnet-1"
   }
 }
-resource "aws_subnet" "demosubnet-2" {
-  vpc_id     = aws_vpc.myvpc.id
-  cidr_block = "172.31.0.0/16"
 
-  tags = {
-    Name = "Subnet-2"
-  }
-}
 resource "aws_internet_gateway" "mygw" {
   vpc_id = aws_vpc.myvpc.id
 
@@ -38,7 +31,7 @@ resource "aws_route_table" "myroute" {
   }
 
   tags = {
-    Name = "example"
+    Name = "RT"
   }
 }
 resource "aws_route_table" "Private-RT" {
