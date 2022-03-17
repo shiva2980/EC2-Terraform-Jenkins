@@ -1,9 +1,13 @@
-resource "aws_s3_bucket" "bucket" {
-  bucket = "bucketforterraformjenkins"
-  acl = private
+resource "aws_s3_bucket" "b" {
+  bucket = "my-tf-test-bucket"
 
   tags = {
-    Name        = "My S3bucket"
+    Name        = "My bucket"
     Environment = "Dev"
   }
+}
+
+resource "aws_s3_bucket_acl" "example" {
+  bucket = aws_s3_bucket.b.id
+  acl    = "private"
 }
