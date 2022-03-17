@@ -1,13 +1,13 @@
-resource "aws_s3_bucket" "b" {
-  bucket = "my-tf-test-bucket"
+resource "aws_s3_bucket" "boldy" {
+  bucket = "my-tf-test-bucket-shivareddy"
 
   tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
+    Name        = "My bucket Shiva Reddy"
+    Environment = "Development"
   }
 }
 
-resource "aws_s3_bucket_acl" "example" {
-  bucket = aws_s3_bucket.b.id
+resource "aws_s3_bucket_acl" "example-1" {
+  bucket = aws_s3_bucket.boldy.id
   acl    = "private"
 }
